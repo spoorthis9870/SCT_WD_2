@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+
+    transition: 0.4s;
+}
+
+.app {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.top-bar h1 {
+    font-size: 28px;
+}
+
+#themeBtn {
+    border: none;
+    background: rgba(255,255,255,0.12);
+    color: white;
+    padding: 10px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.stopwatch-card {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
+
+    padding: 30px;
+    border-radius: 25px;
+
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+.circle {
+    width: 280px;
+    height: 280px;
+
+    margin: auto;
+
+    border: 8px solid #38bdf8;
+    border-radius: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 0 30px rgba(56,189,248,0.4);
+}
+
+#display {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+#status {
+    margin-top: 10px;
+    color: #38bdf8;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.buttons button {
+    padding: 13px 22px;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.buttons button:hover,
+#themeBtn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+#start {
+    background: #22c55e;
+    color: white;
+}
+
+#lap {
+    background: #3b82f6;
+    color: white;
+}
+
+#reset {
+    background: #ef4444;
+    color: white;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.stats div {
+    background: rgba(255,255,255,0.07);
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.stats span {
+    display: block;
+    font-size: 12px;
+    color: #cbd5e1;
+    margin-bottom: 7px;
+}
+
+.stats strong {
+    font-size: 14px;
+}
+
+.lap-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.lap-header h2 {
+    font-size: 20px;
+}
+
+#clearLaps {
+    background: transparent;
+    color: #f87171;
+    border: 1px solid #f87171;
+    padding: 7px 12px;
+    border-radius: 7px;
+}
+
+#laps {
+    max-height: 220px;
+    overflow-y: auto;
+}
+
+.lap {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 13px;
+    margin-bottom: 8px;
+
+    border-radius: 9px;
+    background: rgba(255,255,255,0.07);
+}
+
+.lap-number {
+    color: #38bdf8;
+}
+
+.export {
+    width: 100%;
+    margin-top: 20px;
+    padding: 13px;
+
+    border-radius: 10px;
+    background: #8b5cf6;
+    color: white;
+
+    font-size: 15px;
+}
+
+.shortcuts {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+/* Light Mode */
+
+body.light {
+    background: linear-gradient(135deg, #e0f2fe, #f8fafc);
+    color: #0f172a;
+}
+
+body.light .stopwatch-card {
+    background: rgba(255,255,255,0.7);
+}
+
+body.light #themeBtn {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+body.light .stats div,
+body.light .lap {
+    background: rgba(15,23,42,0.06);
+}
+
+/* Mobile */
+
+@media (max-width: 500px) {
+
+    .stopwatch-card {
+        padding: 20px;
+    }
+
+    .circle {
+        width: 230px;
+        height: 230px;
+    }
+
+    #display {
+        font-size: 25px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+}

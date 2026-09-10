@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Stopwatch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <div class="top-bar">
+        <h1>⏱ Stopwatch</h1>
+        <button id="themeBtn">🌙</button>
+    </div>
+
+    <div class="stopwatch-card">
+
+        <div class="circle">
+            <div id="display">00:00:00.00</div>
+            <p id="status">Ready</p>
+        </div>
+
+        <div class="buttons">
+            <button id="start">▶ Start</button>
+            <button id="lap">🏁 Lap</button>
+            <button id="reset">↻ Reset</button>
+        </div>
+
+        <div class="stats">
+
+            <div>
+                <span>Fastest</span>
+                <strong id="fastest">--</strong>
+            </div>
+
+            <div>
+                <span>Average</span>
+                <strong id="average">--</strong>
+            </div>
+
+            <div>
+                <span>Slowest</span>
+                <strong id="slowest">--</strong>
+            </div>
+
+        </div>
+
+        <div class="lap-header">
+            <h2>Lap Records</h2>
+            <button id="clearLaps">Clear</button>
+        </div>
+
+        <div id="laps"></div>
+
+        <button id="exportBtn" class="export">
+            ⬇ Export Laps
+        </button>
+
+        <p class="shortcuts">
+            Space: Start/Pause &nbsp; | &nbsp;
+            L: Lap &nbsp; | &nbsp;
+            R: Reset
+        </p>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
